@@ -154,9 +154,18 @@ style="color:#0036cc;">Miau.</span>.</p>
 <script>
   const audio1 = document.getElementById("sonido1");
   const audio2 = document.getElementById("sonido2");
-  const catImg = document.getElementById("cat-img");
-  const colores = ["#f8c8dc", "#c4e1f9", "#ffe4b5", "#d5f5e3"];
 
+  document.getElementById("btn1").onclick = () => {
+    audio1.currentTime = 0;
+    audio1.play().catch(e => console.log(e));
+  };
+
+  document.getElementById("btn2").onclick = () => {
+    audio2.currentTime = 0;
+    audio2.play().catch(e => console.log(e));
+  };
+
+ 
   function cambiarFondo() { 
     const color = colores[Math.floor(Math.random() * colores.length)];
     document.body.style.backgroundColor = color;
